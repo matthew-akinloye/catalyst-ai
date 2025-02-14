@@ -25,10 +25,29 @@ export class VerificationComponent {
   }
 
   moveToNext(event: any, index: number) {
-    if (event.target.value.length === 1 && index < this.otp.length) {
-      document.getElementsByName(`otp${index}`)[0].focus();
+    const value = event.target.value;
+    if (value.length === 1 && index < this.otp.length - 1) {
+      const nextInput = document.getElementsByName(`otp${index + 1}`)[0] as HTMLInputElement;
+      nextInput.focus();
     }
   }
+
+
+
+  handleKeyDown(event: KeyboardEvent, index: number) {
+    if (event.key === 'Backspace') {
+      const input = event.target as HTMLInputElement;
+      if (input.value === '') {
+        event.preventDefault();
+        if (index > 0) {
+          this.otp[index - 1] = '';
+          const prevInput = document.getElementsByName(`otp${index - 1}`)[0] as HTMLInputElement;
+          prevInput.focus();
+        }
+      }
+    }
+  }
+
 
   resendOtp() {
     alert('A new OTP has been sent to your email.');
