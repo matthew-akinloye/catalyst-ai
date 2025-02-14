@@ -1,0 +1,55 @@
+<main class="flex items-center justify-center min-h-screen bg-base-200">
+
+    <div class="w-full max-w-md p-6 bg-base-100 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center text-primary-800">CatalystAI</h2>
+        <p class="text-center text-primary-500">Welcome back! Please login to your account.</p>
+
+        <form class="mt-4">
+            <!-- Email -->
+            <div>
+                <label class="block text-primary-700">Email</label>
+                <input type="email" placeholder="Enter your email" class="input input-bordered w-full mt-1" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mt-3">
+                <label class="block text-primary-700">Password</label>
+                <input type="password" placeholder="Enter your password" class="input input-bordered w-full mt-1"
+                    required>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="flex justify-between items-center mt-3">
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" class="checkbox checkbox-sm">
+                    <span class="text-sm text-primary-600">Remember me</span>
+                </label>
+                <a href="/reset-password" class="text-sm text-primary hover:underline">Forgot password?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button class="btn btn-primary w-full mt-4">Login</button>
+
+            <!-- Social Login -->
+            <div class="mt-4 text-center">
+                <p class="text-sm text-primary-600">Or login with</p>
+                <div class="flex gap-3 mt-2 flex-col">
+                    <button class="btn btn-outline w-full">
+                    <i class="fa-brands fa-google"></i>Google
+                    </button>
+                    <button class="btn btn-outline w-full">
+                        <i class="fa-brands fa-github"></i>GitHub
+                    </button>
+                </div>
+            </div>
+
+            <!-- Signup Link -->
+            <p class="text-sm text-center text-primary-600 mt-4">
+                Don't have an account? <a href="/register" class="text-primary hover:underline"> Register</a>
+            </p>
+        </form>
+    </div>
+
+
+
+</main>

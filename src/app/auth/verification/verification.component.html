@@ -1,0 +1,33 @@
+<main class="flex items-center justify-center min-h-screen bg-base-200">
+    <div class="w-full max-w-md p-6 bg-base-100 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center text-primary-800">OTP Verification</h2>
+        <p class="text-center text-primary-500">Enter the OTP sent to your email.</p>
+
+        <form (ngSubmit)="verifyOtp()" class="mt-4">
+            <!-- OTP Input -->
+            <div class="flex justify-center gap-2">
+                <input type="text" maxlength="1" class="input input-bordered w-12 text-center text-xl"
+                    [(ngModel)]="otp[0]" name="otp0" (input)="moveToNext($event, 1)">
+                <input type="text" maxlength="1" class="input input-bordered w-12 text-center text-xl"
+                    [(ngModel)]="otp[1]" name="otp1" (input)="moveToNext($event, 2)">
+                <input type="text" maxlength="1" class="input input-bordered w-12 text-center text-xl"
+                    [(ngModel)]="otp[2]" name="otp2" (input)="moveToNext($event, 3)">
+                <input type="text" maxlength="1" class="input input-bordered w-12 text-center text-xl"
+                    [(ngModel)]="otp[3]" name="otp3" (input)="moveToNext($event, 4)">
+                <input type="text" maxlength="1" class="input input-bordered w-12 text-center text-xl"
+                    [(ngModel)]="otp[4]" name="otp4" (input)="moveToNext($event, 5)">
+                <input type="text" maxlength="1" class="input input-bordered w-12 text-center text-xl"
+                    [(ngModel)]="otp[5]" name="otp5">
+            </div>
+
+            <!-- Verify Button -->
+            <button type="submit" class="btn btn-primary w-full mt-4">Verify OTP</button>
+
+            <!-- Resend OTP -->
+            <p class="text-sm text-center text-primary-600 mt-4">
+                Didn't receive the OTP? <a href="#" (click)="resendOtp()" class="text-primary hover:underline">Resend
+                    OTP</a>
+            </p>
+        </form>
+    </div>
+</main>

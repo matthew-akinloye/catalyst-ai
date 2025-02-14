@@ -1,52 +1,47 @@
 <nav class="fixed top-0 z-50 w-full">
     <div class="navbar bg-base-100">
         <div class="flex-none">
-
-            <button class="btn btn-square btn-ghost">
-                <label for="my-drawer">
-                    <i class="fa fa-bars"></i>
-                </label>
-
-            </button>
+            <!-- Drawer Toggle Button -->
+            <label for="my-drawer" class="btn btn-square btn-ghost">
+                <i class="fa fa-bars"></i>
+            </label>
         </div>
         <div class="flex-1">
-            <a class="btn btn-ghost text-xl">Catalyst Ai</a>
+            <a href="/" class="btn btn-ghost text-xl">Catalyst Ai</a>
         </div>
         <div class="flex-none">
 
-                <div class="dropdown dropdown-end mr-4">
-                
-                    <div tabindex="0" role="button" onclick="my_modal_4.showModal()" class="btn m-1">
-                <i class="fa-solid fa-palette"></i>
-                    </div>
-                
-                    <dialog id="my_modal_4" class="modal">
-                        <div class="modal-box w-11/12 max-w-5xl">
-                            <h3 class="text-lg font-bold">Choose a theme 😍!</h3>
-                
-                            <div class="modal-action">
-                                <form method="dialog">
-                                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-                                        <div class="shadow-md rounded-lg p-4 hover:shadow-xl transition" *ngFor="let theme of themes">
-                
-                                            <input type="radio" name="theme-dropdown"
-                                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                                                [value]="theme | titlecase" [attr.aria-label]="theme" (change)="changeTheme(theme)" />
-                                            <!-- <label>{{ theme | titlecase }}</label> -->
-                                        </div>
-                
-                                    </div>
-                                    <!-- <button class="btn">Close</button> -->
-                                </form>
-                            </div>
-                        </div>
-                    </dialog>
-                
-                
-                
-                
+            <div class="dropdown dropdown-end mr-4">
+                <div tabindex="0" role="button" onclick="my_modal_4.showModal()" class="btn m-1">
+                    <i class="fa-solid fa-palette"></i>
                 </div>
+
+                <dialog id="my_modal_4" class="modal">
+                    <div class="modal-box w-11/12 max-w-5xl">
+                        <h3 class="text-lg font-bold">Choose a theme 😍!</h3>
+
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+                                    <div class="shadow-md rounded-lg p-4 hover:shadow-xl transition"
+                                        *ngFor="let theme of themes">
+
+                                        <input type="radio" name="theme-dropdown"
+                                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                            [value]="theme | titlecase" [attr.aria-label]="theme"
+                                            (change)="changeTheme(theme)" />
+                                        <!-- <label>{{ theme | titlecase }}</label> -->
+                                    </div>
+
+                                </div>
+                                <!-- <button class="btn">Close</button> -->
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+
+            </div>
 
 
             <div class="dropdown dropdown-end">
@@ -56,7 +51,7 @@
                             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                     </div>
                 </div>
-                <ul tabindex="0"
+                <!-- <ul tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     <li>
                         <a class="justify-between">
@@ -66,7 +61,51 @@
                     </li>
                     <li><a>Settings</a></li>
                     <li><a class="text-error">Logout</a></li>
+                </ul> -->
+
+
+
+
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li><a>Profile</a></li>
+                    <li>
+                        <details>
+                            <summary>Settings & Activities</summary>
+                            <ul>
+                                <li>
+                                    <details>
+                                        <summary>Account</summary>
+                                        <ul>
+                                            <li><a>Edit Profile</a></li>
+                                            <li><a>Change Password</a></li>
+                                        </ul>
+                                    </details>
+                                </li>
+
+                                <div class="divider m-0"></div>
+
+                                <li>
+                                    <details>
+                                        <summary>Appearance</summary>
+                                        <ul>
+                                            <li><a>Edit Profile</a></li>
+                                            <li><a>Change Password</a></li>
+                                        </ul>
+                                    </details>
+                                </li>
+
+                            
+
+                            </ul>
+                        </details>
+                    </li>
+                        <li><a >Privacy & Security</a></li>
+                    <li><a class="text-error">Logout</a></li>
                 </ul>
+
+
+
             </div>
 
         </div>
